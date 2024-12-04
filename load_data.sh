@@ -7,8 +7,12 @@ do
     echo "$i $i"
     echo $i
     datasets download genome accession "$i" --include gff3,genome
-    echo datasets download genome accession "$i" --include gff3,genome
-    jbrowse add-assembly genes.gff --out $APACHE_ROOT/jbrowse2 --load copy --name "$i"
+
+    unzip ncbi_dataset.zip
+
+    jbrowse add-assembly ncbi_dataset/data/$i/*.fna --out $APACHE_ROOT/jbrowse2 --load copy --name "$i"
+    
+    jbrowse add-track ncbi_dataset/data/$i/*.gff --out $APACHE_ROOT/jbrowse2 --load copy --assemblyNames "$i"
 
     jbrowse text-index --out $APACHE_ROOT/jbrowse2
 
