@@ -10,7 +10,7 @@ do
 
     unzip ncbi_dataset.zip
     echo ls ncbi_dataset/data/$i/*genomic.fna
-    jbrowse add-assembly ncbi_dataset/data/$i/*genomic.fna --out $APACHE_ROOT/jbrowse2 --load copy
+    jbrowse add-assembly ncbi_dataset/data/$i/*genomic.fna --out $APACHE_ROOT/jbrowse2 --type indexedFasta --load copy
     
     jbrowse add-track ncbi_dataset/data/$i/genomic.gff --out $APACHE_ROOT/jbrowse2 --load copy --assemblyNames "$i"
 
