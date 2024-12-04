@@ -9,10 +9,10 @@ do
     datasets download genome accession "$i" --include gff3,genome
 
     unzip ncbi_dataset.zip
-
-    jbrowse add-assembly ncbi_dataset/data/$i/*.fna --out $APACHE_ROOT/jbrowse2 --load copy --name "$i"
+    echo ls ncbi_dataset/data/$i/
+    jbrowse add-assembly ncbi_dataset/data/$i/*genomic.fna --out $APACHE_ROOT/jbrowse2 --load copy --name "$i"
     
-    jbrowse add-track ncbi_dataset/data/$i/*.gff --out $APACHE_ROOT/jbrowse2 --load copy --assemblyNames "$i"
+    jbrowse add-track ncbi_dataset/data/$i/genomic.gff --out $APACHE_ROOT/jbrowse2 --load copy --assemblyNames "$i"
 
     jbrowse text-index --out $APACHE_ROOT/jbrowse2
 
