@@ -7,7 +7,7 @@ do
     echo "$i"
     datasets download genome accession “$i” --include gff3,genome
 
-    jbrowse add-track genes.gff --out $APACHE_ROOT/jbrowse2 --load copy --assemblyNames “$i”
+    jbrowse add-assembly genes.gff --out $APACHE_ROOT/jbrowse2 --load copy --name “$i”
 
     jbrowse text-index --out $APACHE_ROOT/jbrowse2
 
