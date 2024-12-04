@@ -4,10 +4,11 @@ declare -a arr=(GCF_000859985.2 GCA_027936265.1 GCF_000858285.1 GCF_000848845.1 
 ## now loop through the above array 
 for i in "${arr[@]}" 
 do 
-    echo "$i"
-    datasets download genome accession i --include gff3,genome
-
-    jbrowse add-assembly genes.gff --out $APACHE_ROOT/jbrowse2 --load copy --name "i"
+    echo "$i $i"
+    echo $i
+    datasets download genome accession "$i" --include gff3,genome
+    echo datasets download genome accession "$i" --include gff3,genome
+    jbrowse add-assembly genes.gff --out $APACHE_ROOT/jbrowse2 --load copy --name "$i"
 
     jbrowse text-index --out $APACHE_ROOT/jbrowse2
 
