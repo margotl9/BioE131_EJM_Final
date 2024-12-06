@@ -11,8 +11,7 @@ do
     echo "$i" i
     samtools faidx ncbi_dataset/data/$i/*genomic.fna
     jbrowse add-assembly ncbi_dataset/data/$i/*genomic.fna --out $APACHE_ROOT/jbrowse2 --type indexedFasta --load copy --force
-    jbrowse sort-gff ncbi_dataset/data/$i/*genomic.gff3 > ncbi_dataset/data/$i/genomic.gff
-    bgzip ncbi_dataset/data/$i/*genomic.gff
+    jbrowse sort-gff ncbi_dataset/data/$i/*genomic.gff
     tabix ncbi_dataset/data/$i/*genomic.gff
     jbrowse add-track ncbi_dataset/data/$i/*genomic.gff --out $APACHE_ROOT/jbrowse2 --load copy --assemblyNames "$i" --force
 
