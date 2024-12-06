@@ -12,8 +12,8 @@ do
     samtools faidx ncbi_dataset/data/$i/*genomic.fna
     jbrowse add-assembly ncbi_dataset/data/$i/*genomic.fna --out $APACHE_ROOT/jbrowse2 --type indexedFasta --load copy --force
     jbrowse sort-gff ncbi_dataset/data/$i/*genomic.gff
-    tabix ncbi_dataset/data/$i/*genomic.gff
-    jbrowse add-track ncbi_dataset/data/$i/*genomic.gff --out $APACHE_ROOT/jbrowse2 --load copy --assemblyNames "$i" --force
+    tabix ncbi_dataset/data/$i/*genomic.gff.gz
+    jbrowse add-track ncbi_dataset/data/$i/*genomic.gff.gz --out $APACHE_ROOT/jbrowse2 --load copy --assemblyNames "$i" --force
 
     jbrowse text-index --out $APACHE_ROOT/jbrowse2
 
