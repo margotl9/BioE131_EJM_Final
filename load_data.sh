@@ -8,13 +8,14 @@ unzip ncbi_dataset.zip
 ## now loop through the above array 
 for i in "${arr[@]}" 
 do 
-    echo "$i" i
+    echo "$i" 
     samtools faidx ncbi_dataset/data/$i/*genomic.fna
     jbrowse add-assembly ncbi_dataset/data/$i/*genomic.fna --out $APACHE_ROOT/jbrowse2 --type indexedFasta --load copy --force
     
-    jbrowse sort-gff ncbi_dataset/data/$i/*genomic.gff
-    
-    jbrowse add-track ncbi_dataset/data/$i/*genomic.gff --out $APACHE_ROOT/jbrowse2 --load copy --assemblyNames "$i" --force
+    jbrowse sort-gff ncbi_dataset/data/$i/*genomic.gff | bgzip > ncbi_dataset/data/$i/*genomic_sorted.gff.gz
+    tabix ncbi_dataset/data/$i/*genomic_sorted.gff.gz
+
+    jbrowse add-track ncbi_dataset/data/$i/*genomic_sorted.gff.gz --out $APACHE_ROOT/jbrowse2 --load copy --assemblyNames "$i" --force
 
     jbrowse text-index --out $APACHE_ROOT/jbrowse2
 
