@@ -9,7 +9,6 @@ unzip ncbi_dataset.zip
 for i in "${arr[@]}" 
 do 
     echo "$i" 
-    jbrowse remove_track "genomic_sorted.gff"
     samtools faidx ncbi_dataset/data/$i/*genomic.fna
     
     jbrowse add-assembly ncbi_dataset/data/$i/*genomic.fna  -n "$i" --out $APACHE_ROOT/jbrowse2 --type indexedFasta --load copy --force
