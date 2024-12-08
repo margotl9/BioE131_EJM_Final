@@ -16,7 +16,7 @@ do
     # jbrowse sort-gff ncbi_dataset/data/$i/genomic.gff | bgzip > ncbi_dataset/data/$i/genomic_sorted.gff.gz
     # tabix ncbi_dataset/data/$i/genomic_sorted.gff.gz
 
-    jbrowse add-track ncbi_dataset/data/$i/genomic.gff --out $APACHE_ROOT/jbrowse2 --load copy --assemblyNames "$i" --trackId "$i" --force --overwrite
+    jbrowse add-track ncbi_dataset/data/$i/genomic.gff --out $APACHE_ROOT/jbrowse2 --load copy --assemblyNames "$i" --trackId "$i" --force
     jbrowse text-index --out $APACHE_ROOT/jbrowse2
 
 done 
