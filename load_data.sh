@@ -13,11 +13,9 @@ do
     
     jbrowse add-assembly ncbi_dataset/data/$i/*genomic.fna  -n "$i" --out $APACHE_ROOT/jbrowse2 --type indexedFasta --load copy --force
     
-    jbrowse sort-gff ncbi_dataset/data/$i/*genomic.gff | bgzip > ncbi_dataset/data/$i/genomic_sorted.gff.gz
+    jbrowse sort-gff ncbi_dataset/data/$i/genomic.gff | bgzip > ncbi_dataset/data/$i/genomic_sorted.gff.gz
     tabix ncbi_dataset/data/$i/genomic_sorted.gff.gz
 
     jbrowse add-track ncbi_dataset/data/$i/genomic_sorted.gff.gz --out $APACHE_ROOT/jbrowse2 --load copy --assemblyNames "$i" --force
-
-    jbrowse text-index --out $APACHE_ROOT/jbrowse2
-
 done 
+jbrowse text-index --out $APACHE_ROOT/jbrowse2
