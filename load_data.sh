@@ -21,4 +21,4 @@ done
 jbrowse text-index --out $APACHE_ROOT/jbrowse2 --force
 
 # concatenate files into multiple sequence input
-cat ncbi_dataset/data/$i/*genomic.fna >> multiple_genomic.fna
+cat ncbi_dataset/data/*/*genomic.fna >> multiple_genomic.fna
