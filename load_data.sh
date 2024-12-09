@@ -14,10 +14,10 @@ do
     jbrowse add-assembly ncbi_dataset/data/$i/*genomic.fna  -n "$i" --out $APACHE_ROOT/jbrowse2 --type indexedFasta --load copy --force
    
     echo "before" ncbi_dataset/data/$i/genomic.gff
-    echo "$i_genomic"
+    echo $i+"_genomic"
     ls -lta ncbi_dataset/data/$i/
     
-    jbrowse sort-gff ncbi_dataset/data/$i/genomic.gff | bgzip > ncbi_dataset/data/$i/genomic.gff.gz >> ncbi_dataset/data/$i/$i_genomic_sorted.gff.gz
+    jbrowse sort-gff ncbi_dataset/data/$i/genomic.gff | bgzip > ncbi_dataset/data/$i/genomic.gff.gz > ncbi_dataset/data/$i/$i_genomic_sorted.gff.gz
     tabix ncbi_dataset/data/$i/$i_genomic_sorted.gff.gz
     
     echo "after" ncbi_dataset/data/$i/$i_genomic_sorted.gff.gz
