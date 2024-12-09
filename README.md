@@ -209,7 +209,30 @@ sudo chown -R $(whoami) $APACHE_ROOT/jbrowse2
 In your browser, now type in `http://yourhost/jbrowse2/`, where yourhost is either localhost or the IP address from earlier. Now you should see the words "It worked!" with a green box underneath saying "JBrowse 2 is installed." with some additional details.
 </details>
 
+## 2. Clone this repo into `~/tmp`
 
-## 2. Run load_data.sh
-This will pull the fasta and gff files from NCBI of the accessions listed in accessions
-`bash load_data.sh`
+## 3. Run load_data.sh
+This will pull the `fasta` and `gff` files from NCBI of the accessions listed in `accessions.txt'.
+```
+cd BioE131_EJM_Final/
+bash load_data.sh
+```
+### Accessions included
+
+|Family     | Strain      |Link       |Accession Number|
+|------------|------------|-----------|------------|
+| Simplexvirus | Herpes simplex virus type 1 (HSV-1)| https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_000859985.2/| GCF_000859985.2 | 
+| Simplexvirus | Herpes simplex virus type 1 (HSV-2)| https://www.ncbi.nlm.nih.gov/datasets/genome/GCA_027936265.1/ | GCA_027936265.1| 
+| Varicellovirus| Varicella-zoster virus (VZV)| https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_000858285.1/| GCF_000858285.1 | 
+| Varicellovirus | Simian varicella virus (SVV) | https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_000848845.1/ | GCF_000848845.1| 
+| Mardivirus | Turkey herpesvirus (HVT) | https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_000839725.1/| GCF_000839725.1 | 
+| Iltovirus | Psittacid herpesvirus 1 (PsHV-1) | https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_000840765.1/ | GCF_000840765.1 | 
+| Cytomegalovirus | Human cytomegalovirus (HCMV) | https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_000845245.1/ |  GCF_000845245.1 | 
+| Muromegalovirus | Murine cytomegalovirus (MCMV) | https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_008792765.1/ | GCF_008792765.1 | 
+| Roseolovirus | Human herpesvirus 7 (HHV-7) | https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_000848125.1/ | GCF_000848125.1 | 
+| Lymphocryptovirus | Epstein-Barr virus (EBV) | https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_002402265.1/ | GCF_002402265.1 | 
+| Rhadinovirus | Human herpesvirus 8 (HHV-8) | https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_000838265.1/ | GCF_000838265.1 | 
+| Ictalurivirus | Channel catfish virus (CCV) | https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_000839325.1/ | GCF_000839325.1 | 
+| Undefined genus | Ostreid herpesvirus 1 (OHV) | https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_000846065.1/ | GCF_000846065.1 | 
+
+**Your JBrowse should now be complete!** 
