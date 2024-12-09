@@ -19,3 +19,6 @@ do
     jbrowse add-track ncbi_dataset/data/$i/$i"_genomic_sorted.gff.gz" --out $APACHE_ROOT/jbrowse2 --load copy --assemblyNames "$i" --force
 done 
 jbrowse text-index --out $APACHE_ROOT/jbrowse2 --force
+
+# concatenate files into multiple sequence input
+cat ncbi_dataset/data/$i/*genomic.fna >> multiple_genomic.fna
