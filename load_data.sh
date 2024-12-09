@@ -17,7 +17,7 @@ do
     echo $i"_genomic" $i"_genomic_sorted.gff.gz"
     ls -lta ncbi_dataset/data/$i/
     
-    jbrowse sort-gff ncbi_dataset/data/$i/genomic.gff | bgzip >> ncbi_dataset/data/$i/genomic.gff.gz >> ncbi_dataset/data/$i/$i"_genomic_sorted.gff.gz"
+    jbrowse sort-gff ncbi_dataset/data/$i/genomic.gff | bgzip > ncbi_dataset/data/$i/genomic.gff.gz > ncbi_dataset/data/$i/$i"_genomic_sorted.gff.gz"
     tabix ncbi_dataset/data/$i/$i"_genomic_sorted.gff.gz"
     
     echo "after" ncbi_dataset/data/$i/$i"_genomic_sorted.gff.gz"
